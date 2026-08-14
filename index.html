@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+
+    <title>CARE Ops Board</title>
+    <meta
+      name="description"
+      content="Creative Appeal Real Estate — capture, triage and clear property operations tasks."
+    />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#2E6B45" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- iOS home-screen app -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="CARE Ops" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Brand fonts, self-hosted: no third-party request, renders offline -->
+    <link rel="preload" href="/fonts/public-sans-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+        background: #f6f4ef;
+      }
+      body {
+        margin: 0;
+        /* Stop iOS rubber-banding the whole page behind the app shell */
+        overscroll-behavior-y: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Kill the 300ms tap delay and double-tap zoom on iOS */
+      button,
+      a,
+      input,
+      textarea,
+      [role="button"] {
+        touch-action: manipulation;
+      }
+      #root {
+        min-height: 100vh;
+        min-height: 100dvh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
